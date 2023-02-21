@@ -1,6 +1,6 @@
 # Overly-Simplified-NeRF-with-Pytorch
 
-## NeRF - Pytorch (wip)
+## NeRF - Pytorch
 
 Implementation of <a href="https://github.com/bmild/nerf/">NeRF</a>, Neural Radiance Fields, in Pytorch.
 
