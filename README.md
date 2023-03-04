@@ -5,7 +5,7 @@
 Implementation of <a href="https://github.com/bmild/nerf/">NeRF</a>, Neural Radiance Fields, in Pytorch.
 The NeRF example data is already provided in this repository. You can download the rest of the synthetic and real data used in the original project [here](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1).
 
-
+Results trained on Apple's M2 chip:
 
 <img src="outputs/video.gif" width="200" height="200">
 
