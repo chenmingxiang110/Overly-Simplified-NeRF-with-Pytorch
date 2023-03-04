@@ -14,8 +14,8 @@ trans_t = lambda t : np.array([
 
 rot_phi = lambda phi : np.array([
     [1,0,0,0],
-    [0,tf.cos(phi),-tf.sin(phi),0],
-    [0,tf.sin(phi), tf.cos(phi),0],
+    [0,np.cos(phi),-np.sin(phi),0],
+    [0,np.sin(phi), np.cos(phi),0],
     [0,0,0,1],
 ])
 
