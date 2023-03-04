@@ -38,7 +38,7 @@ def get_rays(H, W, focal, c2w):
     h, w = np.meshgrid(np.arange(W), np.arange(H), indexing="ij")
     directions = np.stack([(w-W*.5)/focal, -(h-H*.5)/focal, -np.ones(w.shape)], -1)
     rays_d = np.sum(directions[..., None, :] * c2w[:3, :3], -1)
-    rays_o = np.broadcast_to(c2w[:3, -1], rays_d, shape)
+    rays_o = np.broadcast_to(c2w[:3, -1], rays_d.shape)
     return rays_o, rays_d
 
 def compute_accumulated_transmittance(alphas):
@@ -47,6 +47,7 @@ def compute_accumulated_transmittance(alphas):
     acc = torch.cat((
         torch.ones((acc.shape[0], 1), device=alphas.device), acc[:, :-1]
     ), dim=-1)
+    return acc
 
 def render_rays(nerf_model, ray_origins, ray_directions, hn=0, hf=0.5, nb_bins=192):
     device = ray_origins.device

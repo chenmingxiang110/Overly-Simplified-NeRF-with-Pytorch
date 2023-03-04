@@ -5,9 +5,9 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-class NerfModel(nn.Module):
+class MyNerfModel(nn.Module):
     def __init__(self, embedding_dim_pos=10, embedding_dim_direction=4, hidden_dim=128):
-        super(NerfModel, self).__init__()
+        super().__init__()
 
         self.block1 = nn.Sequential(nn.Linear(embedding_dim_pos * 6 + 3, hidden_dim), nn.ReLU(),
                                     nn.Linear(hidden_dim, hidden_dim), nn.ReLU(),
